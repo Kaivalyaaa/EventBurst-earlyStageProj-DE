@@ -1,0 +1,113 @@
+<!-- events/templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}EventBurst{% endblock %}</title>
+    <style>
+        /* CSS to style the body */
+        .body{
+            background-color: #d2f4fe;
+            background-image: url(''); /* Adjust the path to your image */
+            background-size: cover; /* Adjust as needed */
+            background-repeat: no-repeat; /* Prevent repeating of the image */
+            background-attachment: fixed;
+        }
+        /* CSS to style the navigation menu */
+        ul.nav-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+            display: flex;
+        }
+
+        ul.nav-menu li {
+            padding: 10px;
+        }
+
+        ul.nav-menu li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        ul.nav-menu li a:hover {
+            background-color: #555;
+        }
+        /*--------------------------*/
+
+        /* CSS to style the information box */
+        .box-container {
+            display: flex;
+            justify-content: space-between; /* Adjust this to control the spacing between boxes */
+        }
+
+        .info-box {
+            width: 300px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            margin: 10px; /* Adjust this to control the space between boxes */
+        }
+        /*--------------------------*/
+
+        /* CSS to style the footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /*--------------------------*/
+
+        /* CSS to style the hover buttons */
+        .hover-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .hover-button:hover {
+            box-shadow: 25px 25px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="body">
+    <div id="header">
+        <ul class="nav-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/events/">Events</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Reach Us</a></li>
+            <!-- Add more navigation items as needed -->
+            <li style="margin-left: auto;"><a href="{% url 'user_login' %}">User Login</a></li>
+            <li style="margin-left: initial;"><a href="{% url 'admin_login' %}">Admin Login</a></li>
+        </ul>
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    <hr>
+    <footer>
+        <p>&copy; 2023 SMAKY-D Team Our EventBurst Web Application</p>
+        <p><a href="{% url 'contact' %}">Contact Us</a></p>
+    </footer>
+</body>
+</html>

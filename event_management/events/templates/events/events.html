@@ -1,0 +1,21 @@
+<!-- events/templates/events/events.html -->
+{% extends 'base.html' %}
+
+{% block title %}Event Management - Events{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Events.</h1>
+    <hr>
+    <p>This is the home page. You can add more content here.</p>
+    <div class="box-container">
+        <div class="info-box">
+            <ul>
+                {% for item in data %}
+                    <li>{{ item.name }} - {{ item.description }}</li>
+                    <a href="{% url 'user_login' %}" class="hover-button">Login to register</a>
+                    <!-- Add more fields as needed -->
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

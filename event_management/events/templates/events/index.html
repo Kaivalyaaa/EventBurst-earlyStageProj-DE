@@ -1,0 +1,29 @@
+<!-- events/templates/events/index.html -->
+{% extends 'base.html' %}
+
+{% block title %}EventBurst - Home{% endblock %}
+
+{% block content %}
+{% block graphics %}
+    <h1 style="text-align: center; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Welcome to the EventBurst</h1>
+    <hr>
+    <p>This is the home page. You can add more content here.</p>
+    <div class="box-container">
+        <div class="info-box">
+            <h2>Organize Events</h2>
+            <p>This is the first information box.</p>
+            <a href="{% url 'admin_login' %}" class="hover-button">Organize</a>
+        </div>
+        <div class="info-box">
+            <h2>Registration</h2>
+            <p>This is the second information box.</p>
+            <a href="/events/" class="hover-button">Browse Events</a>
+        </div>
+        <div class="info-box">
+            <h2>Community</h2>
+            <p>This is the third information box.</p>
+            <a href="#" class="hover-button">Get Started</a>
+        </div>
+    </div>
+{% endblock %}
+{% endblock %}
